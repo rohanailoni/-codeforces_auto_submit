@@ -50,7 +50,6 @@ def run():
             recv_all_info=recv_all(client_sock)
             request = normalize_line_endings(recv_all_info) 
             request_head, request_body = request.split('\n\n', 1)# setting max_split to 1
-            print(request_head,request_body)
             form="""HTTP/1.1 200 OK
                     Content-Type: text/html
 
