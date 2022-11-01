@@ -7,7 +7,7 @@ class wrongproblemId(Exception):
         self.def_list=def_list
 
     def __str__(self):
-        return "The problem id {self.id} is not in the default list of ID's that are {self.def_list}"
+        return "The problem id {} is not in the default list of ID's that are {}".format(self.id,self.def_list)
 
 
 class submitargnotfound(Exception):
