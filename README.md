@@ -21,6 +21,7 @@
   </p>
 </div>
 This is a small kink project where we can submit our code while in codeforces contest from the command line with one click
+
 # installation :-(linux,macos)
 ## create and activate virtualenv
 ```bash
