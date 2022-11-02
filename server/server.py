@@ -1,6 +1,5 @@
 import socket
 import json 
-import signal
 
 serv_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM, proto=0)
 
