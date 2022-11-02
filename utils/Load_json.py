@@ -8,7 +8,7 @@ def Load_json(filepath):
     try:
         data = json.load(f)
     except json.decoder.JSONDecodeError:
-        "The file is either empty or not json file"
+        print("The file is either empty or not json file")
         return None
 
     return data

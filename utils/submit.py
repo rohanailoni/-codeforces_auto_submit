@@ -8,10 +8,10 @@ import json
 
 CONTEST_BASE_URL="https://codeforces.com/contest/"
 def submit(session,submittedProblemIndex,csrf_token,contestId,_tta,sourceFile,programTypeId=31,source="",tabSize="4",Content_Type="text/x-python"):
-    params=Load_json("/home/rohanailoni/Development/ajax/cookies.json")
-    print(params)
-    ftaa=params["ftaa"]
-    bfaa=params["bfaa"]
+    # params=Load_json("/home/rohanailoni/Development/ajax/cookies.json")
+    # print(params)
+    ftaa="gnqqqx99q9h5a60oik"
+    bfaa="10664068841c4f6b8b67418eef2cfeed"
     filename=sourceFile.split("/")[-1]
 
     req={
@@ -39,7 +39,7 @@ def get_submit_template(session,link,filename,problemId):
     link_split=link.split("/")
     contest_Id=link_split[-2]
     response=session.get(link)
-    soup=BeautifulSoup(response.text,'lxml')
+    soup=BeautifulSoup(response.text,'html.parser')
     req=["csrf_token","ftaa","bfaa","action",]
     al=soup.find_all("input")
     all_the_given_inputs={
