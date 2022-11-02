@@ -32,6 +32,11 @@ class problemIdargnotfound(Exception):
 
 
 
+class userpassrequired(Exception):
+    def __init__(self,*args):
+        super().__init__(args)
+    def __str__(self):
+        return "The useranme flag(-U)<capital U> and password flag(-P)<capital P> is required"
 
 
 
