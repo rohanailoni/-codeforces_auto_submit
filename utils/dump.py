@@ -1,4 +1,3 @@
-from fileinput import filename
 import pickle
 import os
 def dump_session(session,filename):
