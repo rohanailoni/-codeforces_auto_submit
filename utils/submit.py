@@ -32,10 +32,10 @@ def submit(session,submittedProblemIndex,csrf_token,contestId,_tta,sourceFile,pr
     url_to_post=CONTEST_BASE_URL+contestId+"/"+"submit?csrf_token="+csrf_token
 
     response=session.post(url_to_post,data=req,files=files)
-    print(response.text)
+    return response.text
     
 
-def get_submit_template(session,link,filename):
+def get_submit_template(session,link,filename,problemId):
     link_split=link.split("/")
     contest_Id=link_split[-2]
     response=session.get(link)
@@ -48,8 +48,8 @@ def get_submit_template(session,link,filename):
     for x in al:
         all_the_given_inputs[x.get("name")]=x.get("value")
     
-    submit(session,"A",all_the_given_inputs['csrf_token'],contest_Id,_tta="740",sourceFile="/home/rohanailoni/Desktop/codeforces/round_827/A.py")
-    return link_split
+    res=submit(session,"A",all_the_given_inputs['csrf_token'],contest_Id,_tta="740",sourceFile=filename)
+    return res
 
 
 
