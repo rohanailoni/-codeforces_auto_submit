@@ -1,4 +1,4 @@
-def Auth_login_session(session_obj):
+def Auth_login_session(session_obj,username,password):
     
     headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml',
@@ -13,14 +13,14 @@ def Auth_login_session(session_obj):
     csrf_token=get_csrf(response)
     if  csrf_token== None:
         return "No CSRF token has been found"
-    login_creds=Load_json("cred.json")
+    #login_creds=Load_json("cred.json")
     new_payload={
         "csrf_token":csrf_token,
         "action":"enter",
         "ftaa":"gnqqqx99q9h5a60oik",
         "bftaa":"10664068841c4f6b8b67418eef2cfeed",
-        "handleOrEmail":login_creds['username'],
-        "password":login_creds['password'],
+        "handleOrEmail":username,
+        "password":password,
         "_tta":"516"
     }
     
